@@ -1,12 +1,14 @@
 
-stagectrl README
+stg.idw  README
 ------------------------
 
-A minimal controller for Stage, to give a template for building your own controllers.
+** NOTE: this code in development and should not be used for anything at all. It probably does not work. These instructions are probably wrong. **
 
- - rtv (vaughan@sfu.ca)  2001.10.20
+An implementation of the Improved Dynamic Window Approach for local obstacle avoidance, based on [Berti et al 2008].
 
- Instructions
+ - rtv (vaughan@sfu.ca)  2011.12.29
+
+Instructions
 ----------------
 
 Assuming Stage is working in your environment (see notes below), you should be able to
@@ -19,7 +21,7 @@ If you see errors, read the notes below on setting up your environment.
 
 $ make
 
-Check to see that the module "basic.so" has been built successfully
+Check to see that the module "dw.so" has been built successfully
 into the current directory. If not, carefully read the build output to
 see what went wrong.
 
@@ -27,18 +29,15 @@ Tell Stage to look in the current directory for controller modules
 
 $ export STAGEPATH=.
 
-Now run Stage with the minimal example world.
+Now run Stage with the test world:
 
-$ stage basic.world
+$ stage worlds/dw.world
 
-You should see a world containing one default model, which is running
-the basic controller which prints a message on the console and in the
-Stage window.
 
-To write your own controller, edit the C++ source file basic.cc. If
-you add more source files, you must add them to CMakeLists.txt.
-
-Please let me know of any errors or ommisions. Enjoy writing Stage controllers.
+References
+----------
+[Berti et al 2008]  IMPROVED DYNAMIC WINDOW APPROACH BY USING LYAPUNOV STABILITY CRITERIA.  
+                    H. BERTI, A.D. SAPPA and O.E. AGAMENNONI. Journal of Latin American Applied Research 38:289-298 (2008)
 
 
 Notes on setting up your environment
